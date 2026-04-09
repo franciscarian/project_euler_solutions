@@ -14,4 +14,4 @@ fifteenth = Euler_Utilies()
 #remove solutions that have already been accounted for (multiples of 15)
 fifteens = fifteenth.multiples_sum(15, 1000)
 
-print((fives+threes) - fifteens)
+print(fives+threes)
