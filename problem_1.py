@@ -1,15 +1,17 @@
 #this is my solution to the first problem of project euler
 
 #get the sum of all multiples of 3 and 5 under 1000
-def multiples_sum(multiple, limit):
-    sum = 0
-    i = 0
-    while i*multiple <= limit:
-        sum += i*multiple
-        i += 1
-    return sum
+from utilities import *
 
-fives = multiples_sum(5, 1000)
-threes = multiples_sum(3, 1000)
+fifth = Euler_Utilies()
+#grab solutions for 5
+fives = fifth.multiples_sum(5, 1000)
+
+third = Euler_Utilies()
+threes = third.multiples_sum(3, 1000)
+
+fifteenth = Euler_Utilies()
+#remove solutions that have already been accounted for (multiples of 15)
+fifteens = fifteenth.multiples_sum(15, 1000)
 
 print(fives+threes)
