@@ -24,4 +24,14 @@ class Euler_Utilies:
         while True:
             previous, current = current, current + previous
             yield current
- 
+    
+    def is_prime(self, n: int) -> bool:
+        if n <= 1:
+            return False
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        return True
+    
+    def is_palindrome(self, n: int) -> bool:
+        return str(n) == str(n)[::-1]
