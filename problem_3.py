@@ -1,25 +1,23 @@
 from math import sqrt
-
-def is_prime(n: int) -> bool:
-    if n <= 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
+from utilities import Euler_Utilies
     
 def prime_factors(n: int) -> list:
-    if is_prime(n):
+    prime = Euler_Utilies()
+    if prime.is_prime(n):
         return None       
     else:
         p_factors = []
-        for i in range(2, int(sqrt(n))):
-            if n % i != 0:
+        original_n = n
+        for i in range(2, int(sqrt(original_n))):
+            if n == 1:
+                break
+            elif n % i != 0:
                 continue
-            elif n % 1 == 0 and not is_prime(i):
+            elif n % 1 == 0 and not prime.is_prime(i):
                 continue
-            elif n % i == 0 and is_prime(i):
+            elif n % i == 0 and prime.is_prime(i):
                 p_factors.append(i)
+                n //= i
         return p_factors
                 
                 
@@ -27,5 +25,5 @@ def prime_factors(n: int) -> list:
 #divide 210 by 2, until its not longer divisible
 import time
 start_time = time.time()
-print(prime_factors(600851475143))
+print(prime_factors(600851575143))
 print("--- %s seconds ---" % (time.time() - start_time))

@@ -32,3 +32,6 @@ class Euler_Utilies:
             if n % i == 0:
                 return False
         return True
+    
+    def is_palindrome(self, n: int) -> bool:
+        return str(n) == str(n)[::-1]
