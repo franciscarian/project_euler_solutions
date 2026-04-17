@@ -60,3 +60,38 @@ class Euler_Utilities:
                 p_factors.append(n)
             
             return p_factors
+    
+    def lcm(self, n):
+    #find prime factors.
+        #iterate through list
+        #if not in max_p_factors, add
+        #if .count(p_factor) > max_p_factors[p_factor], replace
+        #iterate through and multiply.
+        max_p_factors = {}
+        p_factors = Euler_Utilities()
+        for i in range(2, n+1):
+            p_factor = p_factors.prime_factors(i)
+            for j in p_factor:
+                if j not in max_p_factors:
+                    max_p_factors[j] = p_factor.count(j)
+                else:
+                    if p_factor.count(j) > max_p_factors[j]:
+                        max_p_factors[j] = p_factor.count(j)
+                    continue
+        lcm = 1
+        for idx in max_p_factors.items():
+            curr_mul = idx[0] ** idx[1]
+            lcm *= curr_mul
+        return lcm
+    
+    def difference_two_squares(self,a,b):
+        return (a+b)*(a-b)
+    
+    def triangle_number(self, n): 
+        return n*(n+1)//2
+    
+    def iterative_sum_square(self, n): #find sum of the squares up to the number
+        sum = 0
+        for i in range(1, n+1):
+            sum += i**2
+        return sum
