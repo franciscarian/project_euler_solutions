@@ -6,9 +6,9 @@
 #defined as n = n-1 + n-2
 #memoization, use a dictionary to store recent numbers, then yes!
 
-from utilities import Euler_Utilies
+from utilities import Euler_Utilities
 
-fib_obj = Euler_Utilies()
+fib_obj = Euler_Utilities()
 fib_gen = fib_obj.fibonacci_generator()
 
 sum = 0      

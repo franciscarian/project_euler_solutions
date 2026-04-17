@@ -1,4 +1,6 @@
-class Euler_Utilies:
+from math import sqrt
+
+class Euler_Utilities:
     def __init__(self):
         pass
     
@@ -35,3 +37,26 @@ class Euler_Utilies:
     
     def is_palindrome(self, n: int) -> bool:
         return str(n) == str(n)[::-1]
+    
+    def prime_factors(self, n: int) -> list:
+        temp_v = Euler_Utilities()
+        if temp_v.is_prime(n):
+            return [n]     
+        else:
+            p_factors = []
+            i = 2
+            while n%2 == 0:
+                n //= 2
+                p_factors.append(2)
+                
+            i = 3
+            while i <= sqrt(n):
+                while n % i == 0:
+                    p_factors.append(i)
+                    n//= i 
+                i += 2
+
+            if n> 1: #only factors left is 1 (not prime) and a prime number bigger than sqrt(n)
+                p_factors.append(n)
+            
+            return p_factors
