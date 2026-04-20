@@ -95,3 +95,12 @@ class Euler_Utilities:
         for i in range(1, n+1):
             sum += i**2
         return sum
+    
+    def sieve_prime(self, limit: int) -> list:
+        sieve_list = [True for n in range(0, limit)]
+        sieve_list[0], sieve_list[1] = False, False
+        for number in range(2, limit):
+            if sieve_list[number]: #if True
+                for prime in range(number*number, limit, number):
+                    sieve_list[prime] = False
+        return sieve_list
