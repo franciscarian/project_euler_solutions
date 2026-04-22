@@ -20,7 +20,7 @@ def solution():
 
 import time
 start = time.perf_counter()
-#print(prime_lists(200000))
-print(solution())
+print(sieve_prime(69))
+#print(solution())
 end = time.perf_counter()
 print(end-start)
