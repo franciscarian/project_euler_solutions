@@ -104,3 +104,15 @@ class Euler_Utilities:
                 for prime in range(number*number, limit, number):
                     sieve_list[prime] = False
         return sieve_list
+    
+    def pythag(self, a: int, b: int, c: int) -> bool:
+        return ((a**2 + b**2) == c**2)
+    
+    def pythag_triplet_odd_number(self, a: int) -> tuple:
+        square = a**2
+        even = (square/2) - 0.5
+        odd = (square/2) + 0.5
+        return (a, int(even), int(odd))
+    
+    def pythag_triplet_even_number(self, a: int) -> tuple:
+        pass
