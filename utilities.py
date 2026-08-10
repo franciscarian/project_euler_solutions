@@ -61,6 +61,16 @@ class Euler_Utilities:
             
             return p_factors
     
+    def product_prime_factors(self, lst: list) -> dict:
+        prime_power_dict = {}
+        for i in lst:
+            if i not in prime_power_dict:
+                prime_power_dict[i] = 1
+            else:
+                prime_power_dict[i] += 1
+        return prime_power_dict
+    
+    
     def lcm(self, n):
     #find prime factors.
         #iterate through list
