@@ -126,3 +126,10 @@ class Euler_Utilities:
     
     def pythag_triplet_even_number(self, a: int) -> tuple:
         pass
+    
+    def factorial(self, num: int) -> int:
+        if num <= 1:
+            return 1
+        else:
+            return num * self.factorial(num-1)
+        
